@@ -55,11 +55,11 @@ public:
                 return entry.second;
             }
         }
-        throw std::out_of_range("Key not found");
+        throw out_of_range("Key not found");
     }
 
     void rehash() {
-        int newSize = size * 2;  // Double the size, for example
+        int newSize = size * 2;  // Double the size
         vector<list<pair<string, int>>> newTable(newSize);
 
         // Insert existing values into the new table
@@ -87,7 +87,7 @@ public:
                 return;
             }
         }
-        throw std::out_of_range("Key not found");
+        throw out_of_range("Key not found");
     }
 };
 
