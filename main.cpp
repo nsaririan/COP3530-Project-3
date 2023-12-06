@@ -76,6 +76,7 @@ int main() {
                 cout << "Enter the state to remove (place the state's abbreviation in quotes): ";
                 cin >> stateToRemove;
                 root->removeChild(stateToRemove);
+                states->remove(stateToRemove);
                 cout << "State removed.\n";
                 break;
             }
