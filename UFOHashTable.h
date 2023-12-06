@@ -49,7 +49,8 @@ public:
 
     // Get the value associated with a key
     int get(const string& key) const {
-        int index = hashFunction(key);
+        string stateWithoutQuotes = key.substr(1, key.length() - 2);
+        int index = hashFunction(stateWithoutQuotes);
         for (const auto& entry : table[index]) {
             if (entry.first == key) {
                 return entry.second;
@@ -79,7 +80,8 @@ public:
 
     // Remove a key-value pair from the hash table
     void remove(const string& key) {
-        int index = hashFunction(key);
+        string stateWithoutQuotes = key.substr(1, key.length() - 2);
+        int index = hashFunction(stateWithoutQuotes);
         auto& entries = table[index];
         for (auto it = entries.begin(); it != entries.end(); ++it) {
             if (it->first == key) {
