@@ -39,7 +39,7 @@ int main() {
 
     // Create n-ary tree
     TreeNode* root = new TreeNode("Root");
-    HashTable states(10);
+    HashTable statesTable(10);
 
     // Load UFO sightings data into n-ary tree
     for (unsigned int i = 0; i < col.size(); i++) {
@@ -52,10 +52,12 @@ int main() {
     int choice;
 
     do {
+        cout << "Welcome to the UFO Alien helper finder!";
         cout << "Menu:\n";
         cout << "1. Print top N states\n";
         cout << "2. Remove state\n";
-        cout << "3. Quit\n";
+        cout << "3. Get state count\n";
+        cout << "4. Quit\n";
         cout << "Enter your choice: ";
         cin >> choice;
 
@@ -69,7 +71,7 @@ int main() {
                 cout << "Enter the number of top states to print: ";
                 cin >> n;
                 root->printTopStates(n);
-                states->printTopStates(n);
+                statesTable->printTopStates(n);
                 break;
             }
             case 2: {
@@ -77,11 +79,18 @@ int main() {
                 cout << "Enter the state to remove (place the state's abbreviation in quotes): ";
                 cin >> stateToRemove;
                 root->removeChild(stateToRemove);
-                states->remove(stateToRemove);
+                statesTable->remove(stateToRemove);
                 cout << "State removed.\n";
                 break;
             }
-            case 3:
+            case 3: {
+                string state;
+                cout << "Enter the state you would like to see aliens at(abbreviated and capitalized): ";
+                cin >> state;
+                
+                cout << statesTable->get(state) << " sightings\n";
+            }
+            case 4:
                 cout << "Goodbye!\n";
                 break;
             default:
