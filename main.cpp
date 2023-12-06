@@ -12,7 +12,7 @@ using namespace std;
 int main() {
     fstream fin;
 
-    fin.open("/Users/niloufarsaririan/CLionProjects/ufo/ufo_sightings.csv", ios::in);
+    fin.open("ufo_sightings.csv", ios::in);
 
     if (!fin.is_open()) {
         cout << "File could not be read";
@@ -73,7 +73,7 @@ int main() {
             }
             case 2: {
                 string stateToRemove;
-                cout << "Enter the state to remove: ";
+                cout << "Enter the state to remove (place the state's abbreviation in quotes): ";
                 cin >> stateToRemove;
                 root->removeChild(stateToRemove);
                 cout << "State removed.\n";
