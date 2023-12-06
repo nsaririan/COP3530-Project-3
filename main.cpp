@@ -96,7 +96,7 @@ int main() {
             default:
                 cout << "Invalid choice. Please try again.\n";
         }
-    } while (choice != 3);
+    } while (choice != 4);
 
     // Cleanup: Release memory taken up by tree nodes
     delete root;
