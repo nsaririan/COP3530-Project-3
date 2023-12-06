@@ -89,4 +89,27 @@ public:
         }
         throw out_of_range("Key not found");
     }
+
+    bool compareSecond(const pair<string, int>& a, const pair<string, int>& b) {
+        return a.second > b.second;
+    }
+
+
+    void printTopStates(int n) {
+        vector<pair<string, int>> states;
+        
+        for (const auto& entries : table) {
+            for (const auto& entry : entries) {
+                states.push_back(entry);
+            }
+        }
+
+        sort(states.begin(), states.end(), [this](const auto& a, const auto& b) {
+            return compareSecond(a, b);
+            });
+
+        for (int i = 0; i < min(n, 50); i++) {
+            cout << states.at(i).first << ": " << states.at(i).second << " sightings\n";
+        }
+    }
 };
