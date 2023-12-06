@@ -69,6 +69,7 @@ int main() {
                 cout << "Enter the number of top states to print: ";
                 cin >> n;
                 root->printTopStates(n);
+                states->printTopStates(n);
                 break;
             }
             case 2: {
