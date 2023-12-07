@@ -33,7 +33,7 @@ public:
     }
 
     // Remove child node using state abbreviation
-    void removeChild(const string& stateAbbreviation) {
+    /*void removeChild(const string& stateAbbreviation) {
         auto it = remove_if(children.begin(), children.end(),
             [&stateAbbreviation](TreeNode* node) {
                 return node->state == stateAbbreviation;
@@ -47,6 +47,7 @@ public:
         // Erase removed nodes from vector
         children.erase(it, children.end());
     }
+    */
 
 
     // Get sightings count for given state
