@@ -4,8 +4,8 @@
 #include <sstream>
 #include <algorithm>
 #include <iostream>
-#include "table.h"
-#include "tree.h"
+#include "UFOHashTable.h"
+#include "UFONarytree.h"
 #include <chrono>
 using namespace std;
 using namespace std::chrono;
