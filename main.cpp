@@ -5,7 +5,7 @@
 #include <algorithm>
 #include <iostream>
 #include "UFOHashTable.h"
-#include "UFONarytree.h"
+#include "UFONaryTree.h"
 #include <chrono>
 using namespace std;
 using namespace std::chrono;
