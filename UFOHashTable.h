@@ -1,10 +1,12 @@
 #pragma once
+#include <algorithm>
 #include <iostream>
 #include <fstream>
 #include <vector>
 #include <string>
 #include <sstream>
 #include <list>
+
 
 using namespace std;
 
@@ -40,7 +42,7 @@ public:
             }
         }
         // If key doesn't exist, add a new key-value pair
-        table[index].push_back({key, 1});
+        table[index].push_back({ key, 1 });
         num++;
 
         if ((float)(num / size) == maxLoadFac) {
@@ -100,7 +102,7 @@ public:
 
     void printTopStates(int n) {
         vector<pair<string, int>> states;
-        
+
         for (const auto& entries : table) {
             for (const auto& entry : entries) {
                 states.push_back(entry);
