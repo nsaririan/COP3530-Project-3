@@ -71,7 +71,7 @@ int main() {
                 cout << "Enter the number of top states to print: ";
                 cin >> n;
                 root->printTopStates(n);
-                statesTable->printTopStates(n);
+                statesTable.printTopStates(n);
                 break;
             }
             case 2: {
@@ -79,7 +79,7 @@ int main() {
                 cout << "Enter the state to remove (place the state's abbreviation in quotes): ";
                 cin >> stateToRemove;
                 root->removeChild(stateToRemove);
-                statesTable->remove(stateToRemove);
+                statesTable.remove(stateToRemove);
                 cout << "State removed.\n";
                 break;
             }
@@ -88,7 +88,7 @@ int main() {
                 cout << "Enter the state you would like to see aliens at(abbreviated and capitalized): ";
                 cin >> state;
                 
-                cout << statesTable->get(state) << " sightings\n";
+                cout << statesTable.get(state) << " sightings\n";
             }
             case 4:
                 cout << "Goodbye!\n";
