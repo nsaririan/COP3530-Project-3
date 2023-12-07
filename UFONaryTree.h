@@ -1,7 +1,5 @@
-#pragma once
 #include <iostream>
-using namespace std;
-
+#pragma once
 #include <fstream>
 #include <vector>
 #include <string>
@@ -18,9 +16,9 @@ public:
     // Insert UFO sighting into the tree
     void insertSighting(const string& state) {
         auto it = find_if(children.begin(), children.end(),
-                          [&state](const TreeNode* node) {
-                              return node->state == state;
-                          });
+            [&state](const TreeNode* node) {
+                return node->state == state;
+            });
 
         if (it != children.end()) {
             // State exists, increment count
@@ -37,13 +35,13 @@ public:
     // Remove child node using state abbreviation
     void removeChild(const string& stateAbbreviation) {
         auto it = remove_if(children.begin(), children.end(),
-                            [&stateAbbreviation](TreeNode* node) {
-                                return node->state == stateAbbreviation;
-                            });
+            [&stateAbbreviation](TreeNode* node) {
+                return node->state == stateAbbreviation;
+            });
 
         // Delete removed nodes
         for (auto iter = it; iter != children.end(); ++iter) {
-            delete *iter;
+            delete* iter;
         }
 
         // Erase removed nodes from vector
@@ -53,8 +51,9 @@ public:
 
     // Get sightings count for given state
     int getSightings(const string& stateToFind) const {
+        string stateWithoutQuotes = stateToFind.substr(1, stateToFind.length() - 2);
         for (const TreeNode* child : children) {
-            if (child->state == stateToFind) {
+            if (child->state == stateWithoutQuotes) {
                 return child->sightingsCount;
             }
         }
@@ -66,9 +65,9 @@ public:
         // Sort children using sightings count
         vector<TreeNode*> sortedChildren = children;
         sort(sortedChildren.begin(), sortedChildren.end(),
-             [](const TreeNode* a, const TreeNode* b) {
-                 return a->sightingsCount > b->sightingsCount;
-             });
+            [](const TreeNode* a, const TreeNode* b) {
+                return a->sightingsCount > b->sightingsCount;
+            });
 
         for (int i = 0; i < min(n, static_cast<int>(sortedChildren.size())); ++i) {
             cout << sortedChildren[i]->state << ": " << sortedChildren[i]->sightingsCount << " sightings\n";
