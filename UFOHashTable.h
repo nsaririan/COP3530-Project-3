@@ -82,7 +82,7 @@ public:
 
 
     // Remove a key-value pair from the hash table
-    void remove(const string& key) {
+    /*void remove(const string& key) {
         string stateWithoutQuotes = key.substr(1, key.length() - 2);
         int index = hashFunction(stateWithoutQuotes);
         auto& entries = table[index];
@@ -94,6 +94,7 @@ public:
         }
         throw out_of_range("Key not found");
     }
+    */
 
     bool compareSecond(const pair<string, int>& a, const pair<string, int>& b) {
         return a.second > b.second;
