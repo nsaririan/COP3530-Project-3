@@ -50,6 +50,16 @@ public:
     }
 
 
+    // Get sightings count for given state
+    int getSightings(const string& stateToFind) const {
+        for (const TreeNode* child : children) {
+            if (child->state == stateToFind) {
+                return child->sightingsCount;
+            }
+        }
+        throw out_of_range("State not found");
+    }
+
     // Perform DFS traversal of tree and print top states
     void printTopStates(int n) const {
         // Sort children using sightings count
