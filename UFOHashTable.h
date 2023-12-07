@@ -110,7 +110,7 @@ public:
             return compareSecond(a, b);
             });
 
-        for (int i = 0; i < min(n, states.size()); i++) {
+        for (int i = 0; i < min(n, 50); i++) {
             cout << states.at(i).first << ": " << states.at(i).second << " sightings\n";
         }
     }
