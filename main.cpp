@@ -64,9 +64,9 @@ int main() {
         cout << "Welcome to the UFO Alien helper finder!" << endl;
         cout << "Menu:\n";
         cout << "1. Print top N states\n";
-        cout << "2. Remove state\n";
-        cout << "3. Get state count\n";
-        cout << "4. Quit\n";
+        //cout << "2. Remove state\n";
+        cout << "2. Get state count\n";
+        cout << "3. Quit\n";
         cout << "Enter your choice: ";
         cin >> choice;
 
@@ -100,7 +100,7 @@ int main() {
             break;
 
         }
-        case 2: {
+        /*case 2: {
             string stateToRemove;
             cout << "Enter the state to remove (place the state's abbreviation in quotes): ";
             cin >> stateToRemove;
@@ -121,7 +121,8 @@ int main() {
             cout << "State removed.\n" << endl;
             break;
         }
-        case 3: {
+        */
+        case 2: {
             string state;
             cout << "Enter the state you would like to see aliens at(abbreviated and capitalized): ";
             cin >> state;
@@ -141,14 +142,14 @@ int main() {
             cout << "Time taken to remove state for Hash Table: " << duration8.count() << " nanoseconds" << endl << endl;
 
         }
-        case 4: {
+        case 3: {
             cout << "Goodbye!\n";
             break;
         }
         default:
             cout << endl << "Invalid choice. Please try again.\n" << endl;
         }
-    } while (choice != 4);
+    } while (choice != 3);
 
     // Cleanup: Release memory taken up by tree nodes
     delete root;
