@@ -52,7 +52,7 @@ public:
         string stateWithoutQuotes = key.substr(1, key.length() - 2);
         int index = hashFunction(stateWithoutQuotes);
         for (const auto& entry : table[index]) {
-            if (entry.first == key) {
+            if (entry.first == stateWithoutQuotes) {
                 return entry.second;
             }
         }
@@ -84,7 +84,7 @@ public:
         int index = hashFunction(stateWithoutQuotes);
         auto& entries = table[index];
         for (auto it = entries.begin(); it != entries.end(); ++it) {
-            if (it->first == key) {
+            if (it->first == stateWithoutQuotes) {
                 entries.erase(it);
                 return;
             }
